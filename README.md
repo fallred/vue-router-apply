@@ -27,3 +27,10 @@ yarn run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
+//defer有序加载js的 async异步无序的
+//preload预加载   prefetch 预抓取
+
+// webpack懒加载
