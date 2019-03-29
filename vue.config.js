@@ -31,7 +31,7 @@ module.exports = {
         'style-resources-loader':{
             preProcessor: 'less',
             patterns: [
-                path.resolve(__dirname,'src/assets/common.less')
+                'D:\\project\\vue-router-apply\\src\\assets\\common.less'
             ]
         }
     }
