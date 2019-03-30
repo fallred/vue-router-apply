@@ -36,6 +36,7 @@ export default [
     {
         path: '/user',
         name: 'user',
+        meta: {needLogin: true},
         component: () => import('_v/User.vue'),
         children:[{
             path: '',
