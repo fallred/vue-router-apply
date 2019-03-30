@@ -9,7 +9,8 @@ module.exports = {
     chainWebpack: config=>{
         // 可以获取webpack配置，并增加一些自己的逻辑
         // 配置目录别名，别名叫
-        config.resolve.alias.set('+',path.resolve(__dirname,'src/components'));
+        config.resolve.alias.set('_c',path.resolve(__dirname,'src/components'));
+        config.resolve.alias.set('_v',path.resolve(__dirname,'sr/views'));
     },
     configureWebpack: {// webpack-merge
         plugins: [],
@@ -31,7 +32,7 @@ module.exports = {
         'style-resources-loader':{
             preProcessor: 'less',
             patterns: [
-                'D:\\project\\vue-router-apply\\src\\assets\\common.less'
+                path.resolve(__dirname,'src/assets/common.less')
             ]
         }
     }
