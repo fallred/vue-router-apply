@@ -1,10 +1,10 @@
 
-import Home from '_v/Home.vue';
-import Name from '_v/Name.vue';
-import Version from '_v/Version.vue';
-// import Login from '_v/Login.vue';
-// import Profile from '_v/Profile.vue';
-// import User from '_v/User.vue';
+import Home from '../views/Home.vue';
+import Name from '../views/Name.vue';
+import Version from '../views/Version.vue';
+// import Login from '../views/Login.vue';
+// import Profile from '../views/Profile.vue';
+// import User from '../views/User.vue';
 // 默认情况下只有首页默认显示，其他点击时才加载组件
 // component => () => {}
 export default [
@@ -16,43 +16,39 @@ export default [
     {
         path: '/home',
         name: 'home',
-        component: {
-            default: Home,
-            name: Name,
-            version: Version
-        }
+        component:  ()=> import('../views/Home.vue')
     },
     {
         path: '/login',
         name: 'login',
-        component: ()=> import('_v/Login.vue')
+        component: ()=> import('../views/Login.vue')
     },
     {
         path: '/profile',
         name: 'profile',
-        component: () => import('_v/Profile.vue'),
+        component: () => import('../views/Profile.vue'),
         meta: {needLogin: true}// 路由元信息
     },
     {
         path: '/user',
         name: 'user',
         meta: {needLogin: true},
-        component: () => import('_v/User.vue'),
+        component: () => import('../views/User.vue'),
         children:[{
             path: '',
-            component: () => import('_v/UserAdd.vue'),
+            component: () => import('../views/UserAdd.vue'),
         },{
             path: 'add',
             name: 'userAdd',// 默认路径儿子不能加/
-            component: () => import('_v/UserAdd.vue'),
+            component: () => import('../views/UserAdd.vue'),
         },{
             path: 'list',
             name: 'userList',// 默认路径儿子不能加/
-            component: () => import('_v/UserList.vue'),
+            component: () => import('../views/UserList.vue'),
         },{
             path: 'detail/:id',// /user/detail/1 /user/detail/2
             name: 'userDetail',// 默认路径儿子不能加/
-            component: () => import('_v/UserDetail.vue'),
+            component: () => import('../views/UserDetail.vue'),
             beforeEnter(to,from,next){
                 //(2) 局部
                 console.log('xxx');
@@ -61,6 +57,6 @@ export default [
         }]
     },{
         path:'*',
-        component:  () => import('_v/404.vue'),
+        component:  () => import('../views/404.vue'),
     }
 ];

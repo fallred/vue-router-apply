@@ -11,8 +11,8 @@ router.beforeEach((to,from,next)=>{
   // 如果用户已经登录了 并且访问的还是登录页面
   // 先要校验，当前路由是否要登录
   //  如果登录过，并且需要登录
+  let isLogin = localStorage.getItem('login');
   if (flag) {
-    let isLogin = localStorage.getItem('login');
     if (isLogin) {
       console.log('需要登录');
       // ajax看一下用户是否登录过

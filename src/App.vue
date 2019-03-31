@@ -8,10 +8,10 @@
             </div>
         </div>
         <ul class="navbar-nav nav">
-          <li><router-link tag="span" :to="{name:'home'}">首页</router-link></li>
+          <li><router-link :to="{path:'/home'}">首页</router-link></li>
           <li><router-link :to="{path:'/profile'}">个人中心</router-link></li>
           <li><router-link :to="{path:'/user'}">用户</router-link></li>
-          <li><router-link :to="{name:'login'}">登录</router-link></li>
+          <li><router-link :to="{path:'/login'}">登录</router-link></li>
         </ul>
       </div>
     </div>

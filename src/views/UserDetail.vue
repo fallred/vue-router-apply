@@ -10,8 +10,8 @@ export default {
         //(3) 组件
         console.log('enter userDetail');
         next();
-    }
-    beforeRouteUpdate(){
+    },
+    beforeRouteUpdate(to, from, next){
         next();
     },
     // watch: {
